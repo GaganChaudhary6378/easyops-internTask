@@ -1,6 +1,11 @@
 import Link from 'next/link';
 
 const CustomerList = ({ customers }) => {
+  // Check if the customers array is empty
+  if (customers.length === 0) {
+    return <p className='text-black'>No customers available.</p>;
+  }
+
   return (
     <ul>
       {customers.map((customer) => (
