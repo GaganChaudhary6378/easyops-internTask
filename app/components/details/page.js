@@ -40,10 +40,11 @@ const CustomerDetails = () => {
 
   const handleUpdate = async (data) => {
     try {
-      const response = await fetch(`/api/modifyCustomer/${id}`, {
+      const response = await fetch(`/api/modifyCustomer/${id}?cacheBuster=${cacheBuster}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          'Cache-Control': 'no-cache',
         },
         body: JSON.stringify(data),
       });
@@ -63,8 +64,12 @@ const CustomerDetails = () => {
     const shouldDelete = window.confirm('Are you sure you want to delete this customer?');
     if (shouldDelete) {
       try {
-        const response = await fetch(`/api/modifyCustomer/${id}`, {
+        const response = await fetch(`/api/modifyCustomer/${id}?cacheBuster=${cacheBuster}`, {
           method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache',
+          },
         });
 
         if (response.ok) {
