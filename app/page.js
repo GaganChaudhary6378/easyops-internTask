@@ -1,19 +1,21 @@
 "use client"
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-export const revalidate = 0
+
 const Home = () => {
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
     async function fetchCustomers() {
       try {
-        const response = await fetch('/api/getCustomers', {
+        const cacheBuster = new Date().getTime(); // Generates a unique timestamp
+        const response = await fetch(`/api/getCustomers?cacheBuster=${cacheBuster}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache', // Override cache control for this request
           },
-        },{ cache: 'no-store' });
+        });
 
         if (response.ok) {
           const data = await response.json();

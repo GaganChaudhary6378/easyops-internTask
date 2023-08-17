@@ -4,7 +4,7 @@ import connectDB from '@/lib/db';
 export const GET = async (request) => {
   try {
     await connectDB();
-
+    console.log("refetching")
     const customers = await Customer.find();
     return new Response(JSON.stringify(customers), { status: 200 });
   } catch (error) {
