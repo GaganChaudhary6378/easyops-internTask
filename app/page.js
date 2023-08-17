@@ -1,6 +1,6 @@
 "use client"
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import CustomerList from './components/CustomerList/page';
 
 const Home = () => {
   const [customers, setCustomers] = useState([]);
@@ -36,7 +36,19 @@ const Home = () => {
       </header>
       <main className="container mx-auto mt-6 p-4">
         {customers.length > 0 ? (
-          <CustomerList customers={customers} />
+          <ul>
+            {customers.map((customer) => (
+              <li key={customer._id} className="mb-2">
+                <Link href={`/components/customers/${customer._id}`} className="text-black">
+                  <div className="bg-white rounded-md p-3 shadow-md hover:shadow-lg">
+                    <h3 className="text-lg font-medium">{customer.name}</h3>
+                    <p className="text-gray-600">{customer.email}</p>
+                    <p className="text-gray-600">{customer.phone}</p>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
         ) : (
           <p>No customers available.</p>
         )}
