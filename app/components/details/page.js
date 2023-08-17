@@ -1,21 +1,23 @@
 "use client"
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/navigation'; // Import the useRouter hook
+import { useRouter } from 'next/router'; // Import the useRouter hook (note the corrected import)
 import CustomerForm from '../Form/page';
 
 const CustomerDetails = () => {
   const pathname = usePathname();
   const id = pathname.split('/').pop();
   const [customer, setCustomer] = useState({});
-  const router = useRouter(); // Initialize the useRouter hook
+  const router = useRouter();
 
   const fetchCustomerDetails = async () => {
     try {
-      const response = await fetch(`/api/modifyCustomer/${id}`, {
+      const cacheBuster = new Date().getTime();
+      const response = await fetch(`/api/modifyCustomer/${id}?cacheBuster=${cacheBuster}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
+          'Cache-Control': 'no-cache',
         },
       });
 
@@ -48,7 +50,7 @@ const CustomerDetails = () => {
 
       if (response.ok) {
         fetchCustomerDetails();
-        router.push('/'); // Redirect to the home page after successful update
+        router.push('/');
       } else {
         console.error('Failed to update customer');
       }
@@ -66,7 +68,7 @@ const CustomerDetails = () => {
         });
 
         if (response.ok) {
-          router.push('/'); // Redirect to the home page after successful delete
+          router.push('/');
         } else {
           console.error('Failed to delete customer');
         }
