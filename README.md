@@ -61,14 +61,47 @@ Additionally, you can use the "Modify Customer" API to update or delete specific
 4. Run the development server using `npm run dev`.
 5. Access the application in your web browser at `http://localhost:3000`.
 
+   ##The .env.local file looks like :-
+   
+   <img width="962" alt="Screenshot 2023-08-17 at 5 57 03 PM" src="https://github.com/GaganChaudhary6378/easyops-internTask/assets/100700883/c0778e20-4634-47c6-8f77-9c40eec14007">
+
+
 ## Technologies Used
 
 - Next.js
 - MongoDB
 - React
 - Tailwind CSS
+- Formik
 
 ## Author
 
 Gagan Chaudhary
+
+## Project ScreenShots
+
+# Home Page : -
+<img width="1470" alt="Screenshot 2023-08-17 at 6 04 13 PM" src="https://github.com/GaganChaudhary6378/easyops-internTask/assets/100700883/1dec67e8-3874-4339-97ed-6b756cb22b4d">
+
+# Input Validation and add customer page: -
+<img width="1470" alt="Screenshot 2023-08-17 at 6 06 08 PM" src="https://github.com/GaganChaudhary6378/easyops-internTask/assets/100700883/2dddf769-499b-47e3-9f9e-9371a7018262">
+
+# Customer successfully added :- 
+<img width="1467" alt="Screenshot 2023-08-17 at 6 07 34 PM" src="https://github.com/GaganChaudhary6378/easyops-internTask/assets/100700883/65844b4e-e2cf-4318-a369-e0b2a6d6c4fc">
+
+# Modify details of customer :-
+<img width="1469" alt="Screenshot 2023-08-17 at 6 09 10 PM" src="https://github.com/GaganChaudhary6378/easyops-internTask/assets/100700883/e3ea882b-94c3-49f4-96d6-2681a2693f29">
+
+# Details have been modified successfully : -
+<img width="1470" alt="Screenshot 2023-08-17 at 6 10 02 PM" src="https://github.com/GaganChaudhary6378/easyops-internTask/assets/100700883/fb4463b1-8069-477b-92a3-90c8cc6cde44">
+
+# Delete a customer : -
+<img width="1346" alt="Screenshot 2023-08-17 at 6 15 09 PM" src="https://github.com/GaganChaudhary6378/easyops-internTask/assets/100700883/7fe8d3ed-c369-43f2-b946-5f852c5af1c1">
+
+
+# Customer deleted successfuly : -
+<img width="1342" alt="Screenshot 2023-08-17 at 6 16 48 PM" src="https://github.com/GaganChaudhary6378/easyops-internTask/assets/100700883/bca3f58d-b918-4d7f-b73a-9097bfa61e9c">
+
+
+
 
