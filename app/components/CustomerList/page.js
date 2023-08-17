@@ -1,6 +1,11 @@
 import Link from 'next/link';
 
 const CustomerList = ({ customers }) => {
+  // Check if the customers array is empty or undefined
+  console.log(customers)
+  if (!customers || customers.length === 0) {
+    return <p>No customers available.</p>;
+  }
 
   return (
     <ul>
