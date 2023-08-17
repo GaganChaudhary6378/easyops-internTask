@@ -9,10 +9,10 @@ const CustomerDetails = () => {
   const id = pathname.split('/').pop();
   const [customer, setCustomer] = useState({});
   const router = useRouter();
-
+  const cacheBuster = new Date().getTime();
   const fetchCustomerDetails = async () => {
     try {
-      const cacheBuster = new Date().getTime();
+     
       const response = await fetch(`/api/modifyCustomer/${id}?cacheBuster=${cacheBuster}`, {
         method: 'GET',
         headers: {
