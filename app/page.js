@@ -1,5 +1,4 @@
 "use client"
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import CustomerList from './components/CustomerList/page';
 
@@ -36,13 +35,15 @@ const Home = () => {
         <h1 className="text-white text-2xl text-center">Customer List</h1>
       </header>
       <main className="container mx-auto mt-6 p-4">
-        <CustomerList customers={customers}/>
+        {customers.length > 0 ? (
+          <CustomerList customers={customers} />
+        ) : (
+          <p>No customers available.</p>
+        )}
         <div className="text-center mt-4">
-
           <a href="/components/add" className="py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600">
             Add Customer
           </a>
-
         </div>
       </main>
     </div>
