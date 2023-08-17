@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/router'; // Import the useRouter hook (note the corrected import)
+import { useRouter } from 'next/navigation'; // Import the useRouter hook (note the corrected import)
 import CustomerForm from '../Form/page';
 
 const CustomerDetails = () => {
