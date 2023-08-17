@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-
+export const revalidate = 0
 const Home = () => {
   const [customers, setCustomers] = useState([]);
 
